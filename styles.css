@@ -113,6 +113,12 @@ nav {
   box-shadow: 0 12px 30px rgba(15, 41, 77, 0.06);
 }
 .hero-card { padding: 1.4rem; }
+.tutoring-hero {
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #f8fbff, #eef5ff);
+}
+.tutoring-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .hero-card ul { padding-left: 1rem; color: var(--muted); }
 .hero-visual { width: 100%; max-width: 260px; margin: 0 auto 1rem; }
 section { padding: 1.5rem 0 2rem; }
@@ -147,6 +153,7 @@ footer {
   border-top: 1px solid var(--border);
   padding: 1.2rem 0 2rem;
   color: var(--muted);
+  background: rgba(255,255,255,0.75);
 }
 @media (max-width: 760px) {
   .hero-grid, .enquiry-grid, .footer-grid { grid-template-columns: 1fr; }
