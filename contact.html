@@ -3,39 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Y-Hat Analytics</title>
+    <meta name="description" content="Send Y-Hat Analytics an enrollment request for IT skills training and career preparation." />
+    <title>Enrollment Request | Y-Hat Analytics</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <div class="container">
-        <nav>
-          <a class="brand" href="index.html">Y-Hat Analytics</a>
-          <div class="nav-links">
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="tutoring.html">Tutoring</a>
-            <a href="contact.html">Contact</a>
-          </div>
-        </nav>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Y-Hat Analytics home">Y-HAT <span>ANALYTICS</span></a>
+        <nav aria-label="Main navigation"><div class="nav-links"><a href="services.html">Programs</a><a href="index.html#approach">How it works</a><a href="index.html#career-support">Career support</a><a href="about.html">About</a></div></nav>
+        <a class="nav-cta" href="contact.html" aria-current="page">Contact admissions <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
-    <main class="container page-header">
-      <h1>Contact us</h1>
-      <p class="muted">Let’s discuss your analytics goals, cloud needs, or AI roadmap.</p>
-      <div class="page-content">
-        <div class="list-card">
-          <h3>Get in touch</h3>
-          <ul>
-            <li>Email: hello@yhatanalytics.com</li>
-            <li>Phone: +91 70949 59197</li>
-            <li>Location: Remote & global delivery</li>
-          </ul>
+    <main class="page-shell">
+      <div class="container">
+        <p class="eyebrow eyebrow-dark">Course enquiries</p>
+        <h1>Let’s make your next learning step clearer.</h1>
+        <p class="course-lead">Tell us what you hope to learn and where you are starting from. We can help you compare course options and explain what is confirmed for an upcoming cohort. An enquiry is not an enrollment and does not collect a payment.</p>
+        <div class="enquiry-layout">
+          <form id="enrollment-form" class="enrollment-form" action="/api/enquiries" method="post">
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="full-name">Full name</label>
+                <input id="full-name" name="fullName" autocomplete="name" minlength="2" maxlength="120" required />
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required />
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" minlength="10" maxlength="20" required />
+              </div>
+              <div class="form-field">
+                <label for="program-choice">Program or bundle</label>
+                <select id="program-choice" name="programChoice" required>
+                  <option value="" selected disabled>Select a program</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="cohort-preference">Preferred class time</label>
+                <select id="cohort-preference" name="cohortPreference" required>
+                  <option value="either">Either weekday or weekend lab</option>
+                  <option value="weekday">Weekday evenings</option>
+                  <option value="weekend">Weekend option</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="experience">Current experience</label>
+                <select id="experience" name="experience" required>
+                  <option value="new">New to this subject</option>
+                  <option value="some">Some prior experience</option>
+                  <option value="working">Currently working in IT</option>
+                </select>
+              </div>
+              <div class="form-field form-field-full">
+                <label for="goals">What would you like to achieve? <span class="field-optional">Optional</span></label>
+                <textarea id="goals" name="goals" rows="4" maxlength="800"></textarea>
+              </div>
+            </div>
+
+            <div class="offer-preview" id="offer-preview" aria-live="polite">Choose a program or bundle to see pricing details.</div>
+
+            <div class="consent-field">
+              <input id="consent" name="consent" type="checkbox" required />
+              <label for="consent">I have read the <a href="privacy.html">privacy notice</a> and <a href="terms.html">draft terms</a>, and consent to Y-Hat Analytics using these details to respond to and manage my course request.</label>
+            </div>
+
+            <div class="form-trap" aria-hidden="true"><label for="company-website">Leave this field empty</label><input id="company-website" name="companyWebsite" tabindex="-1" autocomplete="off" /></div>
+            <button class="btn btn-primary" type="submit">Send enrollment request <span aria-hidden="true">↗</span></button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <p class="form-legal-note">Founding Cohort and regular prices are shown for planning. Final dates, inclusions, taxes, and terms will be stated in a written offer. No placement is guaranteed.</p>
+          </form>
+
+          <aside class="enquiry-aside">
+            <h2>What happens next?</h2>
+            <p>Programs target 2-3 live online classes per week, about 1.5-2 hours per class, with assignments, guided labs, recordings, and learner support.</p>
+            <p>Next cohort dates are to be announced. We will confirm the outline, prerequisites, inclusions, final fee, and availability before any payment is requested.</p>
+            <h3>Prefer email?</h3>
+            <a href="mailto:yhatanalytics03@gmail.com">yhatanalytics03@gmail.com</a>
+            <a href="tel:7094959197">7094959197</a>
+            <p>We will respond using the contact details you provide. Please do not send payment card details or sensitive personal information by email or through this form.</p>
+            <p>Online payment is not available through this website yet. Official payment instructions are shared only after course details and terms are confirmed.</p>
+          </aside>
         </div>
       </div>
     </main>
 
-    <footer><div class="container">© 2026 Y-Hat Analytics</div></footer>
+    <footer class="site-footer"><div class="container footer-row"><a class="brand brand-footer" href="index.html">Y-HAT <span>ANALYTICS</span></a><p>Practical IT learning. Thoughtful career preparation.</p><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><small>© 2026 Y-Hat Analytics</small></div></footer>
+    <script src="offerings.js" defer></script>
+    <script src="enrollment.js?v=privacy-notice-v4" defer></script>
   </body>
 </html>

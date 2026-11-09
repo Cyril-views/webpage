@@ -3,55 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services | Y-Hat Analytics</title>
+    <meta name="description" content="Browse Y-Hat Analytics learning paths in programming, analytics, data engineering, cloud, AI, and career skills." />
+    <title>Learning Paths | Y-Hat Analytics</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <div class="container">
-        <nav>
-          <a class="brand" href="index.html">Y-Hat Analytics</a>
-          <div class="nav-links">
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="tutoring.html">Tutoring</a>
-            <a href="contact.html">Contact</a>
-          </div>
-        </nav>
+    <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html" aria-label="Y-Hat Analytics home">Y-HAT <span>ANALYTICS</span></a><nav aria-label="Main navigation"><div class="nav-links"><a href="index.html#programs">Programs</a><a href="index.html#approach">How it works</a><a href="index.html#career-support">Career support</a><a href="about.html">About</a></div></nav><a class="nav-cta" href="contact.html">Talk to us <span aria-hidden="true">↗</span></a></div></header>
+    <main class="page-shell"><div class="container">
+      <p class="eyebrow eyebrow-dark">Learning paths</p>
+      <h1>Choose a skill to build next.</h1>
+      <p class="course-lead">Explore practical starting points across software, data, cloud, and AI. Each path lists its target duration, live hours, Founding Cohort price, and regular price.</p>
+      <p class="offer-review">Delivery target: 2-3 live online classes per week, about 1.5-2 hours each, with assignments, guided labs, recordings, and learner support. Next cohort dates, final inclusions, and taxes are confirmed in the written offer.</p>
+      <div class="program-grid catalogue-grid">
+        <a class="program-card" href="python.html"><span class="program-number">PROGRAMMING</span><h3>Python foundations</h3><p>Core programming, automation, files, and data workflows.</p><span class="text-link">View learning outline <span aria-hidden="true">↗</span></span></a>
+        <a class="program-card" href="sql.html"><span class="program-number">DATA ANALYTICS</span><h3>SQL & analytics</h3><p>Query, combine, summarise, and explain data.</p><span class="text-link">View learning outline <span aria-hidden="true">↗</span></span></a>
+        <a class="program-card" href="bigquery.html"><span class="program-number">DATA ENGINEERING</span><h3>GCP Data Engineering Professional Program</h3><p>SQL, GCS, BigQuery, Pub/Sub, Dataflow, Composer, IAM, monitoring, cost, and end-to-end projects.</p><span class="text-link">View learning outline <span aria-hidden="true">↗</span></span></a>
+        <a class="program-card" href="gcp.html"><span class="program-number">CLOUD</span><h3>Google Cloud foundations</h3><p>Cloud architecture, identity, core services, security, and cost concepts.</p><span class="text-link">View learning outline <span aria-hidden="true">↗</span></span></a>
+        <a class="program-card" href="ai-ml.html"><span class="program-number">ARTIFICIAL INTELLIGENCE</span><h3>AI, ML, deep learning & GenAI</h3><p>Modeling concepts, evaluation, generative AI patterns, and responsible use.</p><span class="text-link">View learning outline <span aria-hidden="true">↗</span></span></a>
+        <a class="program-card" href="other-services.html"><span class="program-number">DATA TOOLING</span><h3>Data engineering tools</h3><p>Explore orchestration, transformation, and processing tools by cohort.</p><span class="text-link">View learning outline <span aria-hidden="true">↗</span></span></a>
+        <a class="program-card" href="maths.html"><span class="program-number">TECHNICAL FOUNDATIONS</span><h3>Maths & statistics for data</h3><p>Build confidence with quantitative concepts used in analytics and ML.</p><span class="text-link">View learning outline <span aria-hidden="true">↗</span></span></a>
+        <a class="program-card" href="english.html"><span class="program-number">COMMUNICATION</span><h3>Technical communication</h3><p>Practise explaining technical work, documenting projects, and presenting findings.</p><span class="text-link">View learning outline <span aria-hidden="true">↗</span></span></a>
+        <a class="program-card" href="soft-skills.html"><span class="program-number">CAREER PREPARATION</span><h3>Professional skills</h3><p>Build interview, collaboration, and workplace communication skills.</p><span class="text-link">View learning outline <span aria-hidden="true">↗</span></span></a>
       </div>
-    </header>
-
-    <main class="container page-header">
-      <h1>Our Services</h1>
-      <p class="muted">Professional support for analytics, cloud transformation, and applied AI.</p>
-      <div class="page-content">
-        <div class="list-card">
-          <h3>Analytics & reporting</h3>
-          <ul>
-            <li>Dashboard and KPI design</li>
-            <li>SQL-based reporting and insights</li>
-            <li>Performance tracking and data storytelling</li>
-          </ul>
+      <section class="bundle-section" id="learning-tracks">
+        <div class="section-heading">
+          <p class="eyebrow eyebrow-dark">Multi-course bundles</p>
+          <h2>Follow a complete role-focused track.</h2>
+          <p>Bundle prices group related learning paths. Ask us to confirm sequencing, dates, eligibility, and final terms.</p>
         </div>
-        <div class="list-card">
-          <h3>Cloud data solutions</h3>
-          <ul>
-            <li>BigQuery and GCP implementation support</li>
-            <li>Scalable data pipelines and warehousing</li>
-            <li>Modern cloud architecture guidance</li>
-          </ul>
-        </div>
-        <div class="list-card">
-          <h3>AI/ML enablement</h3>
-          <ul>
-            <li>Use-case discovery and strategy</li>
-            <li>Model readiness and experimentation support</li>
-            <li>Practical roadmap for adoption</li>
-          </ul>
-        </div>
-      </div>
-    </main>
-
-    <footer><div class="container">© 2026 Y-Hat Analytics</div></footer>
+        <div class="program-grid" data-bundle-grid></div>
+      </section>
+      <section class="course-cta"><h2>Not sure which path is right for you?</h2><p>Share your goals and current experience. We can help you compare the learning options.</p><a class="btn" href="contact.html">Ask about a program <span aria-hidden="true">↗</span></a></section>
+    </div></main>
+    <footer class="site-footer"><div class="container footer-row"><a class="brand brand-footer" href="index.html">Y-HAT <span>ANALYTICS</span></a><p>Practical IT learning. Thoughtful career preparation.</p><a href="contact.html">Contact</a><small>© 2026 Y-Hat Analytics</small></div></footer>
+    <script src="offerings.js" defer></script>
+    <script src="course-offers.js" defer></script>
   </body>
 </html>
