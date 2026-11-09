@@ -1,0 +1,12 @@
+.firebase/
+firebase-debug.log
+firestore-debug.log
+.firebaserc
+node_modules/
+dist/
+npm-debug.log
+.env
+.env.*
+*service-account*.json
+*.pem
+*.key
