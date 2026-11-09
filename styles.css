@@ -61,6 +61,21 @@ a:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
 .learning-strip-grid > div:first-child { border-left: 0; }
 .learning-strip-grid strong { font-family: var(--font-display); font-size: 20px; }
 .learning-strip-grid span { color: #d3e2d9; font-size: 12px; }
+.pilot-section { padding: 68px 0 74px; background: var(--green-dark); color: white; }
+.pilot-intro { display: grid; grid-template-columns: 1fr 0.8fr; gap: 48px; align-items: end; margin-bottom: 28px; }
+.pilot-intro .eyebrow { color: #f0a17f; }
+.pilot-intro h2 { max-width: 600px; margin: 0; font-family: var(--font-display); font-size: 36px; line-height: 1.17; }
+.pilot-intro > p { max-width: 520px; margin: 0 0 4px; color: #dce8e1; font-size: 14px; }
+.pilot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.pilot-card { display: flex; min-height: 250px; flex-direction: column; align-items: flex-start; padding: 23px; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.06); transition: background-color 160ms ease, transform 160ms ease; }
+.pilot-card:hover { transform: translateY(-3px); background: rgba(255, 255, 255, 0.11); }
+.pilot-index { color: #f0a17f; font-family: var(--font-display); font-size: 20px; font-weight: 700; }
+.pilot-index span { margin-left: 8px; color: #dce8e1; font-family: var(--font-body); font-size: 10px; letter-spacing: 1px; }
+.pilot-card h3 { margin: 24px 0 8px; font-family: var(--font-display); font-size: 22px; line-height: 1.25; }
+.pilot-card p { margin: 0 0 20px; color: #dce8e1; font-size: 13px; }
+.pilot-card .text-link { margin-top: auto; color: #f0a17f; }
+.pilot-disclaimer { margin: 18px 0 0; color: #dce8e1; font-size: 12px; }
+.pilot-disclaimer a { color: white; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 
 .programs-section { padding: 88px 0 92px; background: var(--paper); }
 .section-heading { max-width: 690px; margin-bottom: 34px; }
@@ -200,6 +215,11 @@ a:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
 .about-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; margin-top: 40px; }
 .about-columns h2 { font-family: var(--font-display); font-size: 23px; }
 .about-columns p { color: var(--muted); }
+.instructor-profile { display: grid; grid-template-columns: 88px 1fr; gap: 24px; align-items: center; margin-top: 40px; padding: 28px; border: 1px solid var(--line); background: var(--surface); }
+.instructor-monogram { display: grid; width: 88px; aspect-ratio: 1; place-items: center; border-radius: 50%; background: var(--green-dark); color: white; font-family: var(--font-display); font-size: 26px; font-weight: 700; }
+.instructor-profile .eyebrow { margin-bottom: 6px; }
+.instructor-profile h2 { margin: 0; font-family: var(--font-display); font-size: 26px; }
+.instructor-profile p:last-child { max-width: 760px; margin: 8px 0 0; color: var(--muted); font-size: 14px; }
 .institution-section { margin-top: 70px; padding: 42px; background: var(--surface); }
 .institution-section > h2 { max-width: 650px; margin: 0 0 28px; font-family: var(--font-display); font-size: 34px; line-height: 1.2; }
 .institution-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
@@ -244,7 +264,7 @@ a:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
 @media (max-width: 900px) {
   .nav-wrap { gap: 16px; }
   .nav-links { gap: 16px; }
-  .approach-grid, .career-grid { gap: 44px; }
+  .approach-grid, .career-grid, .pilot-intro { gap: 44px; }
   .outcomes-layout, .faq-layout { gap: 44px; }
 }
 @media (max-width: 720px) {
@@ -261,10 +281,10 @@ a:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
   .learning-strip-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .learning-strip-grid > div { padding: 16px 10px; }
   .learning-strip-grid > div:nth-child(odd) { border-left: 0; }
-  .programs-section, .approach-section, .audience-section { padding: 64px 0; }
+  .programs-section, .approach-section, .audience-section, .pilot-section { padding: 64px 0; }
   .outcomes-section, .faq-section { padding: 64px 0; }
   .section-heading h2, .approach-intro h2, .career-grid h2, .contact-grid h2 { font-size: 34px; }
-  .program-grid, .approach-grid, .career-grid, .contact-grid, .audience-grid, .institution-grid, .outcomes-layout, .faq-layout { grid-template-columns: 1fr; gap: 28px; }
+  .program-grid, .approach-grid, .career-grid, .contact-grid, .audience-grid, .institution-grid, .outcomes-layout, .faq-layout, .pilot-intro, .pilot-grid { grid-template-columns: 1fr; gap: 28px; }
   .outcomes-grid { grid-template-columns: 1fr; }
   .resources-grid { align-items: flex-start; flex-direction: column; }
   .enquiry-layout { grid-template-columns: 1fr; gap: 18px; }
@@ -273,6 +293,9 @@ a:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
   .form-field-full { grid-column: auto; }
   .course-layout, .about-columns { grid-template-columns: 1fr; gap: 28px; }
   .institution-section { padding: 26px; }
+  .instructor-profile { grid-template-columns: 64px 1fr; gap: 16px; padding: 20px; }
+  .instructor-monogram { width: 64px; font-size: 20px; }
+  .pilot-intro h2 { font-size: 32px; }
   .course-offer-facts { grid-template-columns: 1fr; }
   .course-offer-facts { grid-template-columns: 1fr; }
   .program-card { min-height: 225px; }
