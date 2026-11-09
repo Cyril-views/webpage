@@ -7,6 +7,8 @@
   const offerPreview = document.querySelector("#offer-preview");
   const formStatus = document.querySelector("#form-status");
   const submitButton = form.querySelector('button[type="submit"]');
+  const staticEmailMode = window.location.protocol === "file:"
+    || window.location.hostname.endsWith(".github.io");
   const fees = new Intl.NumberFormat("en-IN", {
     style: "currency",
     currency: catalog.currency,
@@ -61,6 +63,10 @@
   showOffer();
 
   async function checkRequestStatus() {
+    if (staticEmailMode) {
+      formStatus.textContent = "This public site sends enquiries through your email app; it does not store them.";
+      return;
+    }
     try {
       const response = await fetch("/api/status", { cache: "no-store" });
       if (!response.ok) throw new Error("Status unavailable");
@@ -99,6 +105,31 @@
       companyWebsite: form.elements.companyWebsite.value,
       privacyNoticeVersion: "privacy-notice-v4"
     };
+
+    if (staticEmailMode) {
+      const selectedCourse = catalog.courses.find((course) => course.id === selectionId);
+      const selectedBundle = catalog.bundles.find((bundle) => bundle.id === selectionId);
+      const selectedOffer = selectionType === "course" ? selectedCourse : selectedBundle;
+      const emailBody = [
+        "Y-Hat Analytics course enquiry",
+        "",
+        `Name: ${payload.fullName}`,
+        `Email: ${payload.email}`,
+        `Phone: ${payload.phone}`,
+        `Program: ${selectedOffer?.name || "Not selected"}`,
+        `Preferred class time: ${payload.cohortPreference}`,
+        `Current experience: ${payload.experience}`,
+        `Learning goals: ${payload.goals || "Not provided"}`,
+        "",
+        "I have read the privacy notice and draft terms and consent to using these details to respond to my course request."
+      ].join("\n");
+      const subject = `Course enquiry: ${selectedOffer?.name || "Y-Hat Analytics"}`;
+      const mailto = `mailto:yhatanalytics03@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+      formStatus.textContent = "Your email app should open with this enquiry. Review the message and send it there; the website does not save it.";
+      window.location.href = mailto;
+      submitButton.disabled = false;
+      return;
+    }
 
     try {
       const response = await fetch(form.action, {
